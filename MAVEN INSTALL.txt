@@ -27,9 +27,8 @@ GLB ------------------------------------- MAVEN INSTALL + CONFIG NEXUS ---------
 - sudo ln -s /opt/apache-maven-3.6.0 /opt/maven
 - sudo vim /etc/profile.d/maven.sh
 
-	MAVEN_HOME=/opt/maven
-	PATH=$PATH:$MAVEN_HOME/bin
-	export PATH MAVEN_HOME
+	export PATH=/opt/maven/bin:$PATH
+	
 - sudo chmod +x /etc/profile.d/maven.sh
 - source /etc/profile.d/maven.sh
 - mvn -version
