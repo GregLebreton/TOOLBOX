@@ -15,7 +15,7 @@ GLB ------------------------------------- MAVEN INSTALL + CONFIG NEXUS ---------
 
 - sudo wget https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
 - sudo tar xzvf apache-maven-3.6.0-bin.tar.gz
-- sudo mv apache-maven-3.6.0-bin.tar.gz /opt/maven
+- sudo mv apache-maven-3.6.0 /opt/maven
 
 
 ---- CONFIG ----
