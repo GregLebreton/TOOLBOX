@@ -1,38 +1,36 @@
-GLB ----------------------------------------------------- NEXUS INSTALL ---------------------------------------------- 2019
+#!/bin/bash
 
 
+# NEXUS
 
----- TUTO ----
-
-
-- wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
-- sudo tar xvf latest-unix.tar.gz -C /opt
+sudo wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+sudo tar xvf latest-unix.tar.gz -C /opt
 	(- sudo ln -s /opt/nexus-3.3.1-01/ /opt/nexus)
-- sudo adduser nexus
-- sudo chown -R nexus:nexus /opt/nexus
+sudo adduser nexus
+sudo chown -R nexus:nexus /opt/nexus
 
 
-- cd /etc/systemd/system
-- touch nexus.service
-- nano nexus.service
-	ajouter:
+cd /etc/systemd/system
+touch nexus.service
+nano nexus.service
+	- ajouter:
 
-[Unit]
-Description=nexus service
-After=network.target
-  
-[Service]
-Type=forking
-LimitNOFILE=65536
-ExecStart=/opt/nexus-3.15.2-01/bin/nexus start
-ExecStop=/opt/nexus-3.15.2-01/bin/nexus stop
-User=nexus
-Restart=on-abort
-  
-[Install]
-WantedBy=multi-user.target
+		[Unit]
+		Description=nexus service
+		After=network.target
+
+		[Service]
+		Type=forking
+		LimitNOFILE=65536
+		ExecStart=/opt/nexus-3.15.2-01/bin/nexus start
+		ExecStop=/opt/nexus-3.15.2-01/bin/nexus stop
+		User=nexus
+		Restart=on-abort
+
+		[Install]
+		WantedBy=multi-user.target
 
 
-- sudo systemctl daemon-reload
-- sudo systemctl enable nexus.service
-- sudo systemctl start nexus.service
+sudo systemctl daemon-reload
+sudo systemctl enable nexus.service
+sudo systemctl start nexus.service
