@@ -4,7 +4,7 @@
 sudo yum -y update
 
 # GIT
-sudo yum install git
+sudo yum -y install git
 
 # JAVA
 sudo wget https://download.java.net/java/GA/jdk12/GPL/openjdk-12_linux-x64_bin.tar.gz
